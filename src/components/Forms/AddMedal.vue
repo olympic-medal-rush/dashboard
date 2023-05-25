@@ -11,19 +11,20 @@ const submit = () => {
   
   medalsForm.value.forEach(medalForm => {
     data.push({
-      type: medalForm.medalType.value,
+      type: parseInt(medalForm.medalType.value),
       titre: medalForm.medalTitle.value,
       iso: medalForm.medalPays.value,
-      zone: medalForm.medalZone.value,
+      zone: parseInt(medalForm.medalZone.value),
       athlete: medalForm.medalAthlete.value
     })
   })
   
   console.log(data);
-  // fetch('test', {
-  //       method: 'POST',
-  //       body: saisie
-  // })
+  fetch('http://localhost:8084/admin/medal', {
+        method: 'POST',
+        body: JSON.stringify(data[0]),
+        mode: "no-cors"
+  })
 }
 
 const handleNbMedalChange = (e) => {
