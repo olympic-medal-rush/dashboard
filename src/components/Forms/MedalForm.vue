@@ -5,7 +5,12 @@ import terrainData from '../../assets/json/terrain_data.json'
 import countriesFR from 'i18n-iso-countries/langs/fr.json'
 import countries from 'i18n-iso-countries'
 
-const props = defineProps(['idMedal'])
+const props = defineProps({
+  idMedal: {
+    type: Number,
+    required: true
+  }
+})
 
 // Ref
 const medalTitle = ref()
@@ -24,7 +29,7 @@ defineExpose({
 </script>
 
 <template>
-  <h5>Médaille n°{{this.$props.idMedal}}</h5>
+  <h5>Médaille n°{{props.idMedal}}</h5>
   <form action="" method="post">
       <label for="medalTitle">Nom de l'épreuve : </label>
       <input type="text" id="medalTitle" ref="medalTitle">
