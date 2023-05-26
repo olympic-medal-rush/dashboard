@@ -20,7 +20,7 @@ const submit = () => {
   })
   
   console.log(data);
-  fetch('http://localhost:8084/admin/medal', {
+  fetch(`${import.meta.env.OLYMPIC_WSS}/admin/medal`, {
         method: 'POST',
         body: JSON.stringify(data[0]),
         mode: "no-cors"
