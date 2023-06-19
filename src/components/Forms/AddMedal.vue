@@ -27,7 +27,7 @@ const submit = () => {
   console.log(data);
   fetch(`${import.meta.env.OLYMPIC_WSS}/admin/medal`, {
         method: 'POST',
-        body: JSON.stringify(data[0]),
+        body: JSON.stringify(data),
         mode: "no-cors"
   })
 }
