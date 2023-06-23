@@ -19,7 +19,7 @@ const onSubmit = () => {
     let endpoint = `${import.meta.env.OLYMPIC_WSS}/admin/buff/`;
     if (boostType.value === "vote_rate") {
         endpoint += "vote_rate";
-        data["interval"] = interval.value.value;
+        data["interval"] = parseFloat(interval.value.value);
     } else if (boostType.value === "pathfinding") endpoint += "pathfinding";
 
     fetch(endpoint, { method: "POST", body: JSON.stringify(data), mode: "no-cors" });
