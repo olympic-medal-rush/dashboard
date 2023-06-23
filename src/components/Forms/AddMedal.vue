@@ -3,6 +3,7 @@ import { ref } from "vue";
 import MedalForm from "./MedalForm.vue";
 import placeholderData from "../../assets/json/medals_data.json";
 const nbMedals = ref(1);
+const countEl = ref();
 const medalsForm = ref([]);
 
 const submit = () => {
@@ -29,10 +30,13 @@ const submit = () => {
         body: JSON.stringify(data),
         mode: "no-cors",
     });
+
+    handleNbMedalChange();
 };
 
-const handleNbMedalChange = (e) => {
-    nbMedals.value = parseInt(e.target.value);
+const handleNbMedalChange = () => {
+    nbMedals.value = 0;
+    nbMedals.value = parseInt(countEl.value.value);
 };
 </script>
 
@@ -40,7 +44,7 @@ const handleNbMedalChange = (e) => {
     <div class="Form AddMedal">
         <h3>Ajouter des médailles</h3>
         <label>Nombre de médailles à ajouter : </label>
-        <input type="number" min="1" max="3" :value="nbMedals" v-on:change="handleNbMedalChange" />
+        <input ref="countEl" type="number" min="1" max="3" :value="nbMedals" v-on:change="handleNbMedalChange" />
         <MedalForm v-for="num in nbMedals" :key="num" :idMedal="num" ref="medalsForm" :medal="placeholderData[Math.floor(Math.random() * placeholderData.length)]" />
         <br />
         <a class="submit" v-on:click="submit">Envoyer</a>
