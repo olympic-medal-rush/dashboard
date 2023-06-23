@@ -7,7 +7,7 @@ import AddMedal from './Forms/AddMedal.vue'
     <h2>Médailles 🏅</h2>
     <div class="Medals_Container">
       <div class="card">
-        <AddMedal></AddMedal>
+        <AddMedal/>
       </div>
     </div>
   </div>

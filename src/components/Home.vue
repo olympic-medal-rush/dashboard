@@ -11,7 +11,7 @@ const nbPlayerPays = ['136', '3547', '647', '12']
 <template>
   <div class="Home">
     <h2>Hello, Admin ! </h2>
-    <div class="Home_Container">
+    <!-- <div class="Home_Container">
       <div class="card">
         <h3>List des pays en jeux </h3>
         <div class="Home_Pays-List" v-for="pays, index in onlinePays" :key="pays">
@@ -26,7 +26,7 @@ const nbPlayerPays = ['136', '3547', '647', '12']
           <span></span>
         </div>
       </div> 
-    </div>
+    </div> -->
   </div>
 </template>
 

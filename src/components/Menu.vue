@@ -13,7 +13,7 @@
       <router-link to="/">Acceuil</router-link>
       <span class="divider"></span>
       <router-link to="/medals">Médailles</router-link>
-      <router-link to="/bots">Bots</router-link>
+      <router-link to="/boosts">Boosts</router-link>
     </div>
   </div>
 </template>
