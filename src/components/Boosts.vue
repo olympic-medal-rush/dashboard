@@ -21,7 +21,7 @@ const onSubmit = () => {
         endpoint += "vote_rate";
         data["interval"] = parseFloat(interval.value.value);
     } else if (boostType.value === "pathfinding") endpoint += "pathfinding";
-
+    console.log(data);
     fetch(endpoint, { method: "POST", body: JSON.stringify(data), mode: "no-cors" });
 };
 </script>
